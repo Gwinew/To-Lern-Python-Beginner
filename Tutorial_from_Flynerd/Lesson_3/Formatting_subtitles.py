@@ -31,4 +31,6 @@ print("x is", round(x,6))
 # When we don't using the formating records for numbers like "float" then in original Python take this numbers and formating this in "double".
 # Double have 15 numbersof digits after the decimal point. Float have 6.
 #
-# Formating 
+# String Formating 
+#
+#
