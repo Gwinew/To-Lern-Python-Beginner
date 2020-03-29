@@ -129,3 +129,11 @@ print("{} have {}".format("Alice","cat"))
 print("{1} have {0}".format("Alice","cat"))
 #
 # Elements are numbering from "0", that's why Alice is on position "0" and cat on "1".
+#
+# We can present a formula like it is working.
+print("{} {} {} {}".format("strawberry","13", "1.5","tea"))
+# After that we have "strawberry 13 1.5 tea", when we change a combination on:
+print("{3} {2} {1} {0}".format("strawberry","13", "1.5","tea"))
+# We have "tea 1.5 13 strawberry". We can repeat a word with the same format
+print("{1} {3} {3} {2} {0}".format("strawberry","13", "1.5","tea"))
+# And we have "13 tea tea 1.5 strawberry".
