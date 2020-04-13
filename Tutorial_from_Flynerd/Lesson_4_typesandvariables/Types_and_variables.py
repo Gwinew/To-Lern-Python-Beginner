@@ -95,6 +95,49 @@ print(type(lista))
 # Lists are indexed from "0" - that is mean that when we want to get first elements we need write "lista[0]".
 # If we want to replace first element on lists we use "lista[0]=4"
 #
+# We can create lists in the lists:
+listsinlist=[[3,5],"tea",[True, False],['coffe', 'coke']]
+print(listsinlist)
+print(type(listsinlist),
+      type(listsinlist[0]))
+#
+# We can add position to the end of list:
+listsin=listsinlist+["Adam",3] # Or we can change the inside value use in that case: listsinlist=listsinlist+...
+print(listsin)
+# or:
+listsinlist.append(["Adam",3])# but when we use listsinlist.append("Adam",3) then we add singly value not a list of value
+print(listsinlist)
+#
+# We can also add the all value of lists (not only lists) to the list:
+Aba=[1,2,3,4,5]
+bcb=[6,7,8,9]
+Aba.extend(bcb)
+print(Aba)
+#
+# And removing:
+del(listsin[2])
+print(listsin)
+#
+# Operating on the list when we want to copy values is not simple.
+x=['a','b','c']
+y=x
+y[1]='z'
+print(x) # It is show: a, z, c
+# When we want to create really indepedens copy:
+x=['a','b', 'c']
+y=list(x)
+y[1]='z'
+print(x) # It show a,b,c. We can create a new copy:
+y=x[:]
+print(y)
+#
+# When we want to change something in the list we can use:
+listsinlist[1]="coffemilk"
+print(listsinlist)
+# We can also:
+listsinlist[1:3]="black coffe","modering place"
+print(listsinlist)
+#
 # - Tuples
 # Tuples are unchenged lists. We can not modify the elements contained in the tuple.
 # Tuple is like string it is immutability. Tuples use round brackets.
