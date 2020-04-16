@@ -1,0 +1,60 @@
+Read
+Evaulated
+Print
+Loop
+
+in cmd write "python" to start python
+
+
+_ - is special sign take value to memory and we can using on another calculation
+
+quit() - to the end of python in cmd
+
+In CMD we can operating on formulas like in IDLE but is little annoying.
+When we get to go to another line after using a operation then we need remember to start add 4 spaces or TAB.
+>>> for i in range(5):
+...     x = i * 10
+...	print(x)
+...	<press ENTER>
+
+
+Significant Whitespace Rules:
+
+1. Prefer four spaces
+2. Never mix spaces and tabs
+3. Be consistent on consecutive lines
+4. Only deviate to improve readability
+
+Proframing as Guido intended it  or  indented
+
+
+Import:
+
+import module_name
+e.g.
+import math
+
+
+When we want to use atrtribute from the module, then we use:
+module_name.atrribute_name
+e.g.
+math.sqrt(25)
+
+help(module_name) - return the attribute with description: "space" to go to next page "q" to exit
+e.g.
+help(math)
+help(math.factorial)
+
+
+Import with attribute:
+e.g.
+
+from math import factorial
+n=5
+k=3
+factorial(n) / (factorial(k) *factorial(n-k))
+
+
+We can use alias:
+from math import factorial as fac
+fac(n) /(fac(k) * fac(n-k))

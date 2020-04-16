@@ -1,0 +1,18 @@
+b'data'
+
+
+>>> d = b'some bytes'
+>>> d[0]
+115
+>>> d.split()
+[b'some', b'bytes']
+
+>>> norsk = "a"
+>>> data = norsk.encode('utf8')
+>>> data
+b'\xa5'
+>>> norwegian = data.decode('utf8')
+>>> norwegian == norsk
+True
+>>> norwegian
+'a'

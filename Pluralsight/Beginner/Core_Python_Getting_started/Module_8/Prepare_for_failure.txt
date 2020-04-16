@@ -1,0 +1,26 @@
+1. Check all preconditions
+2. Prepere for consequences
+
+
+LBYL - Look before you leap
+EAFP - Easier to ask forgivness than permission
+
+Python prefers EAFP
+The code's 'happy path' is emphasized rather than being interspersed with error handling
+
+Example: file processing
+
+processing detail are not important
+process_file() open a file and reads it
+
+
+EAFP is enabled by exceptions
+
+Without exceptions, error handling is interspersed in program flow
+
+Exceptions can be handled non-locally
+
+EAFP plus Exceptions:
+1. Exceptions are not easily ignored
+2. Error codes are silent by default
+3. Exceptions plus EAFP makes it hard for problems to be silently ignored

@@ -1,0 +1,24 @@
+import Defining_function_words
+Defining_function_words.fetch_words()
+
+is the same value if we use now:
+import words
+
+words is a file without a definition.
+When we want start a file with definition than we need add a attribute to file name - name module.
+name_module.definition_name - they start and end without showing
+name_module.definition_name() - show a value
+
+Is the same:
+
+from Defining_function_words import fetch_words
+fetch_words()
+
+#######################
+
+from words2 import (fetch_words, print_words)
+print_words(fetch_words())
+
+from words2 import *
+
+print_words(['Any','is'])

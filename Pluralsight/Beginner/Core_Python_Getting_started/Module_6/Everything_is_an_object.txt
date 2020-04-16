@@ -1,0 +1,13 @@
+>>> import words
+>>> type(words) 
+<class 'module'>
+>>> dir(words)
+We get result of many of special function with function in module like 'fetch_words'
+>>> type(words.fetch_words)
+<class 'function'>
+>>> dir(words.fetch_words)
+We get many of many another functions like '__call__', '__class__','__doc__' etc.
+>>> words.fetch_words.__name__
+'fetch_words'
+>>> words.fetch_words.__doc__
+'Fetch a list of words from a URL.\n\n ...'

@@ -1,0 +1,46 @@
+str - Data type for strings in Python
+Sequence of Unicode code points
+Immutable
+
+
+>>> 'first' 'second'
+'firstsecond'
+
+Multiline strings:
+
+>>> """This is
+a multiline
+string"""
+'This is\na multiline\nstring'
+
+
+\n - new line
+
+Escape Sequences:
+
+\"
+\'
+
+
+String Features:
+
+path = r'C:\Users\Merlin\Documents\Spells'
+
+
+str(496)
+'496'
+
+str(6.02e23)
+'6.02e23'
+
+s = 'parrot'
+s[4]
+o
+
+Unicode in Strings:
+
+'Vi er s\u00e5 glad for \u00e5 h\xf8re og l\u00e6re om Python!'
+
+
+'\xe5'
+'\345'

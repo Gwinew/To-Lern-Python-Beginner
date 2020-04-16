@@ -1,0 +1,9 @@
+if expresion:
+	block
+
+
+if True:
+	print("It's true!')
+
+
+Go to Flynerd to the rest

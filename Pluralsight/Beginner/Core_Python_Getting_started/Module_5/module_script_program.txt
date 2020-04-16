@@ -1,0 +1,8 @@
+Python module - Convenient import with API - Application Programming Interface
+
+Python script - Convenient exection from command line
+
+Python program - Perhaps composed of many modules
+
+
+recommended is merge Python module with Python script.

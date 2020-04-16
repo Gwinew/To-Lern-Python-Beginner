@@ -1,0 +1,25 @@
+for item in iterable:
+	body
+
+cities = ['london',
+	'new york',
+	'paris',
+	'oslo']
+
+for city in cities:
+	print(city)
+
+london
+new york
+paris
+oslo
+
+
+
+colors = {'crimson' : 0xdc143c,
+	'coral' : 0xff7f50}
+for color in colors:
+	print(color, colors[color])
+
+crimson 14423100
+coral 16744272

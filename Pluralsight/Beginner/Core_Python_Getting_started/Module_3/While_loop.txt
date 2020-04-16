@@ -1,0 +1,27 @@
+while expression:
+	block
+
+
+c=5
+while c != 0:
+	print(c)
+	c -= 1
+
+result:
+5
+4
+3
+2
+1
+
+
+0 is False
+
+
+break:
+
+while True:
+	response = input()
+	if int(response) % 7 ==0:
+		break
+
