@@ -22,6 +22,7 @@ float - IEEE-754 double-precision with 53-bits of binary precision
 
 float(7)
 float('1.618')
+float(nan) = nan - not a number
 float(inf) - infinity
 float(-inf) -  -infinity
 3.0 + 1 = 4.0

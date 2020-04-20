@@ -30,6 +30,6 @@ def first(iterable):
     except StopIteration:
         raise ValueError("iterable is empty")
 print(first(['1st','2nd','3rd']))
-print(first(['1st','2nd','3rd']))
+print(first({'1st','2nd','3rd'}))
 
 print(first(set())) 
