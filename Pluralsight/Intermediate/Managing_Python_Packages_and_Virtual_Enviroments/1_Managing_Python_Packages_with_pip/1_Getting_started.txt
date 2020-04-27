@@ -1,0 +1,35 @@
+We want to check as version of pip and location. In cmd we write:
+pip -V
+
+If You don't have a information about PIP, than You must install PIP for your Python.
+
+pip comes pre - installed with Python from python website and remember, the important thing is add python path to your computer.
+
+### Install on Windows:
+
+During install python on windows we must check 'Add Python to enviroment variables'.
+
+If you forget that then we must find a path to Python, copy this path (propably in user-folder in AppData\locals\programs\Python),
+
+The next step is go to computer propertise and go to advanced system propertis.
+Go to Enviroment Variables...
+Use 'New' or when you have 'Path' then click 'edit', and click 'New' Inside and paste the path. Also you add path with \scripts.
+
+
+### Install on Linux:
+
+Use package manager...
+
+sudo apt install python-pip
+
+We can checked python 3 version on the computer:
+
+python3 -V
+
+when we want install python 3 (because propably we have python 2 on the computer):
+
+yum install python3
+
+When we want install pip from python 3:
+
+sudo apt install python3-pip

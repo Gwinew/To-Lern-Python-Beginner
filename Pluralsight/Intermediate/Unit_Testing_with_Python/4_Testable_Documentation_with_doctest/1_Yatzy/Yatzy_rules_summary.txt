@@ -1,0 +1,84 @@
+Yatzy rules summary:
+
+- Roll 5 dice (and re-roll some twice)
+
+- Choose an (unused) category to score the roll in
+
+- Your score is the sum of the scores in each category
+
+
+Yatzy Scoring Examples:
+
+1, 2, 2, 3, 3
+
+Category:
+
+- "Twi Pairs"
+2+2+3+3 = 10
+
+- "Threes"
+3+3 = 6
+
+- "Small Straight"
+1,2,3,4,5
+in this case:
+Score is zero
+
+code:
+def small_straight(dice):
+	"""Score the given roll in the 'small straight' yatzy category.
+	
+	>>> small_straight([1,2,3,4,5])
+	15
+	>>> small_straight([1,2,3,5,5])
+	0
+
+	It doesn't handle sets, or unsorted lists
+
+	>>> small_straight({1,2,3,4,5})
+	0
+	>>> small_straight([1,2,3,5,4])
+	0
+	"""
+
+	if dice == [1, 2, 3, 4, 5]:
+		return sum(dice)
+	return 0
+
+# use in command line
+# python -m doctest yatzy.py 		# different from unittest or pytest, we need to specify file to start in doctest
+
+# for beging the test and show a information about it what it doing:
+# python -m doctest yatzy.py -v
+
+# We can also using docstest in pytest:
+# python -m pytest --doctest-modules
+
+We can also use this in PyCharm:
+1. During adding a configuration , set a name 'Pytest doctest'
+2. Add path to directory when a files is.
+3. Add arguments '--doctest-modules'
+
+When we run the test, we got result about everything between sign of docstrings.
+
+
+code after modyfication:
+def small_straight(dice):
+	"""Score the given roll in the 'small straight' yatzy category.
+	
+	>>> small_straight([1,2,3,4,5])
+	15
+	>>> small_straight([1,2,3,5,5])
+	0
+
+	It also accepts sets, or unsorted lists
+
+	>>> small_straight({1,2,3,4,5})
+	15
+	>>> small_straight([1,2,3,5,4])
+	15
+	"""
+
+	if sorted(dice) == [1, 2, 3, 4, 5]:
+		return sum(dice)
+	return 0

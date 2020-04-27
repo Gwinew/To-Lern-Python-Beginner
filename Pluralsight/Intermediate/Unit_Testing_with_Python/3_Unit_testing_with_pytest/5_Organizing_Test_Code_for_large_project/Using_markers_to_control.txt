@@ -1,0 +1,23 @@
+1. Instal from setup.py all packages
+command line: python setup.py install
+
+2. Run the pytest
+command line: python -m pytest
+
+3. Add argument "not slow" and we testing without large objected marked .slow
+command line: python -m pytest -m "not slow"
+
+In PyCharm during create a pytest configuration - in the additional arguments we write:
+-m "not slow"
+
+marking:
+in pytest.ini is markers = slow:
+and this name go to test_large_books to @pytest.mark.slow
+and when we want to use pytest without this test then we use "not slow"
+
+'slow' is 'name'
+
+4. If we want to skip any test then befor test we add @pytest.mark.skip('WIP')
+
+5. If we want to skip if python version is too old:
+@pytest.mark.skipif(sys.version_info < (3,6), reaseon="requires python3.6 or higher')

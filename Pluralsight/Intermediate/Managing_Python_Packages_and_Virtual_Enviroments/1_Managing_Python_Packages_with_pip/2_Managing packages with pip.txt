@@ -1,0 +1,68 @@
+Managing packages with pip:
+- Installing packages
+- Removing packages
+- listing packages
+- Inspecting packages
+- Getting help
+- Searching Packages
+
+
+Best Practice:
+
+Always work inside a virtual enviroment
+Don't use pip with sudo
+
+List of packages and version of packages:
+
+pip list
+
+install packages e.g. requests:
+
+pip install requests - don't do that - this install a packages depend to work whis package
+
+uninstall packages e.g. requests:
+
+pip unistall requests - don't unistal another package with this
+
+pip unistall urllib3 chardet idna certifi - multiunistall package command
+
+
+
+
+pip help - show a command to use
+
+pip help list - show command to use in list section command
+
+e.g.
+
+pip list -o
+
+
+Get info on a specific package:
+
+pip show requests
+
+
+##########################
+
+import sys
+sys.path
+
+We get list of directories.
+
+It is possible we have packaage to the another version of python.
+Then we want to use install package to python 3.
+
+pip3 install requests
+
+
+#######################
+
+default version of install package is for python 2
+
+the better way is:
+
+python3.7 -m pip install flask
+
+pip install --upgrade pip - don't use that
+

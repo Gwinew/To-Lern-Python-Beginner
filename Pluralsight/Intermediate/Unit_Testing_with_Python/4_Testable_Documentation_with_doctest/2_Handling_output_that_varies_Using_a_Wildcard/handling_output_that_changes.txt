@@ -1,0 +1,24 @@
+Handling output that changes
+
+- dates and times
+- object IDs
+- Random numbers
+
+if we want to use the code to search a biggest value from game and add this result to docstrings, we have a problem, because we export a references (e.g. <function full_house at 0x10ec716a8>) and the test is failure all the time.
+
+>>> scores_in_categories([1,1,2,2,2], (ones, twos, threes, full_house, three_of_a_kind))
+[(8,<funtion full_house at 0x10ec716a8>), (6, <funtion twos at 0x10ec717b8>, etc.
+
+#we can use ELLIPSIS to 'references'
+
+>>> scores_in_categories([1,1,2,2,2], 
+... (ones, twos, threes, full_house, three_of_a_kind)) #doctest +ELLIPSIS
+[(8,<funtion full_house at 0x...>), (6, <funtion twos at 0x...>, etc.
+
+remember - '...' is so powerfull and when we add a another function after this changes, then we cannot have a failure and we cannton add a comment about new add function.
+
+# second way:
+>>> scores = scores_in_categories([1,1,2,2,2], 
+... (ones, twos, threes, full_house, three_of_a_kind))
+>>> [(score, category.__name__) for (score, category) in scores]
+[(8, 'full_house'), (6, 'twos'), (6, 'three_of_a_kind'),...]

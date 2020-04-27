@@ -1,0 +1,7 @@
+Documenting The Units:
+
+- Specify behaviour of the unit under test
+
+- How the original developer intended the unit to be used
+
+- Executable: keep in sync with the unit under test

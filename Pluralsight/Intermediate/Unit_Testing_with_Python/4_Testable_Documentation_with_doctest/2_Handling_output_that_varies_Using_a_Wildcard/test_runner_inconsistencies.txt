@@ -1,0 +1,9 @@
+Test runner inconsistencies:
+
+- doctest's own runner doesn't discover all your tests for you
+
+- pytest has the +ELLIPSIS directive permanently on
+
+- Pycharm's doctest runner doesn;t accept global directives
+
+Emily suggest use the pytest

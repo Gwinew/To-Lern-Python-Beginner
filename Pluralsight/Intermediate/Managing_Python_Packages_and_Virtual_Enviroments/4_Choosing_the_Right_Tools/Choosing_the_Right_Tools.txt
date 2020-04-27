@@ -1,0 +1,165 @@
+pip and virtualenv are standard tools
+
+We don't know which tools is good enough
+
+The Python Packaging Authority:
+	- is a working group that maintains many of the relevant projects in Python pakcaging
+		http://pypa.io
+
+
+installation:
+
+- pip
+	- wheels
+	- eggs
+- easy_install 		# don't use
+
+Development:
+
+- Dependency managment
+	- requirements.txt
+- Project isolation
+	- virtualenv
+	- venv
+- New projects
+	- pipenv
+	- poetry
+
+
+Anaconda:
+	- http://www.anaconda.com
+	- Python distribution
+	- Package manager
+	- Installer
+	- Virtual enviroment tool
+	- Installs non-Python packages too
+	- Mostly aimed at Data Science
+
+
+Requirements:
+
+- requirements.txt
+	- Standard (pip)
+	- Not deterministic
+- Pipfile
+	- pipenv
+	- Custom format
+	- Deterministic
+- pyproject.toml
+	- poetry
+	- Standard (PEP-518)
+	- Deterministic
+
+#######################################
+
+Pipenv:
+_
+istall:
+
+sudo pip install pipenv
+_
+go to a project folder:
+
+cd demos/m5_tools/
+_
+(start a python script:
+cat get_rates.py)
+
+_
+when we want to install packages:
+
+pipenv install request python-box
+
+Create this enivroment and packages in this enviroment
+
+_
+We want to look in Pipfile info:
+
+cat Pipfile
+
+And we will see requirements in section [packages]
+
+cat Pipfile.lock 	- Every single packages installed
+
+_
+run a script:
+
+pipenv run python get_rates.py
+
+_
+if we want start shell inside in enviroment:
+
+pipenv shell
+ 
+_
+if we want start the program inside in shell:
+
+python get_rates.py
+
+_
+if we want to exit from shell:
+
+exit
+
+_
+If we want install enviroment for python 3:
+
+pipenv install --three
+
+
+########################
+
+Poetry:
+_
+Install:
+
+curl -sS https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+_
+To cofigure your shell:
+
+source $HOME/.poetry/env
+
+_
+Start new project:
+
+poetry new currencies		# currencies is a name
+_
+go to folder:
+
+cd currencies
+_
+install a requirements packages:
+
+poetry add requests python-box
+_
+copy a file to us project folder:
+
+cp ~/demos/m5_tools/get_rates.py currencies/
+
+_
+run a scripts:
+
+poetry run python currencies/get_rates.py
+
+_
+Check a shell and go to shell:
+
+poetry shell
+
+_
+start a python with 'python' command and use the script:
+
+>>>from currencies import get_rates
+
+_
+Exit from shell and python:
+
+exit			# once?
+
+
+_
+Check pyproject.toml:
+
+cat pyproject.toml
+
+_

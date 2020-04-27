@@ -1,0 +1,16 @@
+Use Cases for doctest:
+
+'docstring' maintrance:
+Keep it synchronised with the code
+
+Regresion Testing:
+Similar to unittest or pytest
+
+Tutorial documentation:
+For when you publish a python library
+
+
+
+Docstrings are comments in the code that document how to use a module, class, or function
+
+- doctest helps you keep them up to date

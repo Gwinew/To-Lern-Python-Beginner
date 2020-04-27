@@ -1,0 +1,12 @@
+Unit Testing Fundamental:
+
+- A Unit is a small pieces of code
+	- A method or function
+	- A module or class
+	- A small group of related classes
+- An Automated Unit Test
+	- Is designed by a human
+	- Runs without intervention
+	- Reports either 'pass' or 'fail'
+
+

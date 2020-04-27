@@ -1,0 +1,4 @@
+1. Understand what to build
+2. Document the units
+3. Design the units
+4. Regression protection

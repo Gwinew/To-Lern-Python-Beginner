@@ -1,0 +1,10 @@
+https://pypi.orh/project/pytest-html/
+
+1. We can after installed this plugin use a command report:
+
+cmd: python -m pytest --html=report.html
+
+2. Open a report.
+
+cmd: open report.html
+

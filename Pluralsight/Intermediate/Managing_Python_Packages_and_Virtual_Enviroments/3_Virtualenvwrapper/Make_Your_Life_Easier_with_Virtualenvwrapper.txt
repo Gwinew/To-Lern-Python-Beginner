@@ -1,0 +1,125 @@
+Virtualenvwrapper:
+
+	- A user-friendly wrapper around virtualenv
+	- Easy creation and activation
+	- Bind projects to virtualenvs
+	- Great with large numbers of projects
+
+###########
+Istall:
+
+Linux or Mac:
+
+sudo pip install virtualenvwrapper
+
+We want to set this program:
+
+which virtualenvwrapper.sh
+
+copy a directory to virtualenvwrapper.sh
+
+Create a new one profile inside:
+
+nano .profile
+
+go to the end of codes (after last fi) and write:
+
+source <paste path to virtualenvwrapper.sh>
+
+save file and exit
+next:
+
+logout			# to logout
+
+to find every enviroment:
+
+vagrant ssh
+
+
+next:
+
+nano .profile
+
+and on the last position on file we write:
+
+export WORKON_HOME="/home/reindert/virtualenvs"  	# If every enviroment is create in one folders
+
+than:
+
+logout
+
+
+and write again:
+
+vagrant ssh
+
+
+#################################
+
+How to use Virtualenvwrapper:
+
+	- Activating a project
+	- Switching projects
+	- Creating projects
+	- Removing projects
+	- Linking projects with virtualenvs
+
+We can show enviroments:
+
+workon
+
+start a currently project:
+
+workon rates_py3
+
+show a packages:
+
+pip list
+
+go to a another project:
+
+workon flask
+
+#
+if we want to create a new project:
+
+1. We must go to the .profile:
+
+nano .profile
+
+2. and write a line:
+export PROJECT_HOME="/home/reindert/dev"
+
+3. and created a file:
+mkdir dev
+
+4. Then we logout and login again:
+
+logout
+vagrant ssh
+
+5. Then we finally can create a new project:
+
+mkproject new_project		#new_project is name # if we want to install project in python 3: mkproject -p python3 new_project
+
+#
+If we want to set project to be activate in currenty folder then
+we need to be directory folder where we want to start:
+
+setvirtualenvproject		# after when we be in activate project
+
+
+###########################
+Virtualenvwrapper commands: vevns
+
+Create a virtualenv:
+
+mkvirtualenv new_env
+
+Remove a virtualenv
+
+emvirtualenv some_env
+
+create a temporary virtual environment:
+
+mktmpenv

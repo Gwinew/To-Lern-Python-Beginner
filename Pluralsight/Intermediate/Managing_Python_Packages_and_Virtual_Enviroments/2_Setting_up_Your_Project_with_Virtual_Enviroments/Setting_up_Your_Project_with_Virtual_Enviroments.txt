@@ -1,0 +1,211 @@
+Problems with System - wide Installs
+
+- Multiple projects with conflicting dependancies
+- Conflicts with system dependencies
+- Multi-user systems
+- Testing code against different python and library versions
+
+Virtual Environments:
+
+- Isolated context for installing packages
+- Always work inside a virtual enviroment
+	- No global installs anymore
+	- Create a virtual env. for every project
+- Isolate project dependencies
+	- No more conflicts with other projects
+
+########
+
+To start a create new virtual enviroment, we must be in a folder where we want to install this.
+Then in cmd:
+python -m pip install virtualenv
+
+To check a version:
+virtualenv --version
+
+If you don't find any version then first to unistal this:
+
+python -m pip unistall virtualenv
+
+and install from global user (administrator):
+
+sudo python -m pip install virtualenv
+
+this is exceptal solution.
+
+####
+Create a virtual enviroment:
+
+
+return to home director folder:
+cd ../..
+
+create a folder:
+mkdir virtualenvs
+
+go to there:
+
+cd virtualenvs
+
+And create a virtual enviroment:
+
+virtualenv rates		#'rates' this is a name of enviroment
+
+######
+
+virtual enviroment in python 3:
+
+virtualenv -p python3 rates_py3		#-p is a call python version which we want to start / 'rates_py3' is a name
+#################################
+
+Activated a virtual enviroment (in terminal/cmd):
+
+in folder virtualenvs:
+rates_py3\Scripts\activate.bat in windows
+
+. rates_py3/bin/activate
+
+##########
+When we want to exit from virtual enviroment than:
+
+deactivate
+
+
+##########
+
+We can use new command to creating a virtual enviroments(only python >=3.3):
+
+python -m venv myvenv
+
+
+
+#########################################
+
+Managing project Requirements:
+
+Active a enviroment:
+e.g.
+
+. ~/virtualenvs/rates_py3/bin.activate
+
+Install a package:
+e.g.
+python -m pip install python-box
+
+and start the script:
+
+python get_rates.py
+
+#
+
+How can I check what packages are installed on enviroment on this project:
+
+python -m pip freeze
+
+We can save this requirements to .txt file:
+
+python -m pip freeze > requirements.txt
+
+##
+
+If we want to use this requirements to install needed packages then:
+
+1. Create a new enviroment.
+2. activate a new enviroment
+3. install packages from requirements.txt:
+python -m pip install -r requirements.txt
+
+
+
+#######################################
+
+Projects and Virtualenvs:
+
+Projects:
+	- Contain source code
+	- Are under version control
+Virtual Enviroments:
+	- Contain packages, tools, python, etc.
+	- Keep them separate from your projects
+	- Usually: 1 venv per project
+	- Can have multiple venvs per project
+	- Or a single venv for multiple projects
+
+
+Specifying Version:
+
+docopt == 0.6.1		# Must be version 0.6.1
+
+keyring >= 4.1.1	# Minimum version 4.1.1
+
+coverage != 3.5		# Anything except version 3.5
+
+
+install a current version:
+
+python -m pip install flask == 0.9
+
+or
+
+python -m pip install 'Django<2.0'	# if < or > in the current specifying version then we must put on this between quotes.
+
+If we want to upgrade:
+
+python -m pip install -U flask
+
+
+Upgrade by itself:
+
+take care not to overwrite system pip
+
+python -m pip install -U pip
+
+##########################################
+
+
+Github
+
+clone a git repositorium:
+
+git clone https://github.com/pallets/flask
+
+create a virtual enviroment:
+
+virtualenvs flask
+
+Active this:
+
+. flask/bin/activate
+
+go to flask project:
+
+cd ../flask/
+
+if we want to install packegas dependes with flask:
+
+1. go to up:
+
+cd ..
+
+2. python -m install -e flask	
+
+#########################################
+
+tox.ini		# test process?
+
+install tox in this enviroment:
+
+python -m pip install tox
+
+When we want to test our code using a specifying version of pythons than:
+
+1. go to flask folder:
+
+cd flask
+
+2. use the command to initiation tox.ini:
+
+tox
+
+Programs creates a folder for currently python version e.g. py36 for python 3.6
+

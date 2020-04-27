@@ -1,0 +1,29 @@
+Option flags:
+
+doctest.NORMALIZE_WHITESPACE
+
+doctest.SKIP
+
+doctest.REPORT_UDIFF
+doctest.REPORT_CDIFF
+doctest.REPORT_NDIFF
+
+
+def dice_counts(dice):
+	"""Make a dictionary of how many of each value are in the dice
+
+	>>> dice_counts([1,2,2,3,3])
+	{1: 1, 2: 2, 3: 2, 4: 0, 5: 0, 6: 0}
+
+	>>> dice_counts('12345') 
+	Traceback...
+	...								
+	TypeError: Can't convert 'int' object to str implicitly		
+	"""
+	return {x: dice.count(x) for x in range(1,7)}
+
+in cmd:
+python -m doctest -v -o IGNORE_EXCEPTION_DETAIL yatzy.py
+
+the same way from pytest:
+python -m pytest --doctest-modules -o doctest_optionflags=IGNORE_EXCEPTION_DETAIL
