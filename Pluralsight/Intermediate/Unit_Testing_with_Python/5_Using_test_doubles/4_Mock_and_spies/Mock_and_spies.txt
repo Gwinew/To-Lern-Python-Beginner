@@ -1,0 +1,32 @@
+Mock and Spies Do more Than Stubs:
+
+- Stub:
+Will not fail the test
+
+- Mock or Spy:
+Can fail the test if it's not called correctly
+
+Three Kinds of assert
+
+- Return Value
+or an exception
+
+- State change
+Use an API to query the new state
+
+- Method call:
+Did a specific method get called on a collaborator
+
+Assert on the method return value:
+
+def test_convert_quotes():
+    fake_file = io.StringIO("quote: ' ")
+    converter = HtmlPagesConverter(open_file=fake_file)
+    converted_text = converter.get_html_page(0)
+    assert converted_text == "quote: &#x27;<br />"
+
+Assert on the alarm state:
+
+def test_alarm_is_off_by_default():
+    alarm = Alarm()
+    assert not alarm.is_alarm_on

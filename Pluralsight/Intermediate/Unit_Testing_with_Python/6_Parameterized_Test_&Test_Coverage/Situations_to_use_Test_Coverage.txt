@@ -1,0 +1,22 @@
+Situation to Use Test Coverage:
+
+- Spot missing test for new code
+
+- Adding tests to existing code
+
+- Tracking trends over time
+
+
+Evaluating Test Quality:
+
+- Bugs in production
+
+- Confidence to refactor
+
+- Unrealible Tests
+
+- Code Review
+
+- Onboarding time
+
+- Mutation testing

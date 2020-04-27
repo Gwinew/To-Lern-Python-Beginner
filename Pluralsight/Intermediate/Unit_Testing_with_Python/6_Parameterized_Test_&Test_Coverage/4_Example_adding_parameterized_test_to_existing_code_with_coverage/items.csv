@@ -1,0 +1,7 @@
+name,sell_in,quality,expected_sell_in,expected_quality
+"+5 Dexterity Vest", 10,20,9,19
+"Backstage passes to a TAFKAL80ETC concert", 15,20,14,21
+"Backstage passes to a TAFKAL80ETC concert", 15,20,9,22
+"Backstage passes to a TAFKAL80ETC concert", 5,20,4,21
+"Aged Brie", 0,5,-1,7
+"Sulfuras, Hand of Ragnaros",10,10,10,10

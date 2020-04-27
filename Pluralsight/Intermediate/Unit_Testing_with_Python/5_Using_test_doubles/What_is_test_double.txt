@@ -1,0 +1,17 @@
+Test double is more like double in movie.
+
+Test double is something like a original code, the look same, but in under is completly different.
+
+Different Kind of Test Double:
+
+- Dummy object
+
+- Test Stub
+
+- Test Spy
+
+- Mock Object
+
+- Fake Object
+
+http://unitpatterns.com
