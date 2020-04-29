@@ -1,0 +1,9 @@
+Install inside a virtual enviroment:
+
+pip install pycodestyle
+
+When we want to checked a file or folder then we use:
+
+pycodestyle <folder_name>/(<file_name.py>)
+
+pycodestyle shows only pep style

@@ -1,0 +1,11 @@
+project_name
+- __main__.py
+- project_name
+	- __init__.py
+	- more_source.py
+	- subpackage1
+		- __init__.py
+	- test
+		- __init__.py
+		- test_code.py
+	- setup.py

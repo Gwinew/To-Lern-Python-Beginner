@@ -1,0 +1,38 @@
+$ python3
+
+>>> locals()
+{'__doc__: None, '__name__': '__main__', etc...}
+
+>>> from reader.compressed import *
+
+many things
+
+>>> bzipped
+<module 'reader.compressed.bzipped' from './reader/compressed/bzipped.py>
+>>> gzipped
+<module 'reader.compressed.gzipped' from './reader/compressed/gzipped.py>
+_________________________________________________________
+
+go to the __init__.py in compresed and paste
+
+from reader.compressed.bzipped import opener as bz2_opener
+from reader.compressed gzipped import opener as gzip_opener
+
+__all__ = ('bz2_opener', 'gzip_opener')
+
+_______________________________________________________
+After that:
+
+$ python3
+
+>>> locals()
+{'__doc__: None, '__name__': '__main__', etc...}
+
+>>> from reader.compressed import *
+
+many things
+
+>>> bz2_opener
+<function open at 0x104743d40>
+>>> gzip_opener
+<function open at 0x1047feef0>

@@ -1,0 +1,28 @@
+Namespace packages dosen't have __init__.py
+
+This avoids complex initialization ordering problems.
+
+importing namespace packages:
+
+1. Python scans all entries in sys.path
+2. If a matching directory with __init__.py is found, a normal package is loaded
+3. If doo.py is found, then it is loaded.
+4. Otherwise, all matching directories in sys.path are considered part of the namespace package
+
+Add to both path from farm to sys.path:
+
+$ python3
+
+>>> import sys
+>>> sys.path.extend(['path1', 'path2'])
+>>> import split_farm
+>>> split_farm.__path__
+_NamespacePath(['path1/split_farm', 'path2/split_farm'])
+>>> import split_farm.bird
+>>> import split_farm.bovine
+>>> split_farm.bird.__path__
+['path2/split_farm/bird']
+>>> split_farm.bovine.__path__
+['path1/split_farm/bovine']
+
+http://www.python.org/dev/peps/pep-0420/

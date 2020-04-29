@@ -1,0 +1,8 @@
+Install Black inside virtual enviroment:
+
+pip install black
+
+When we want to checked:
+
+black <folder_name>/(<file_name.py>)
+

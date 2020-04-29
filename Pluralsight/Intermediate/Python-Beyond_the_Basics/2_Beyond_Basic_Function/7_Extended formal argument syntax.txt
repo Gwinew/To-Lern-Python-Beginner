@@ -1,0 +1,149 @@
+Extended formal argument syntax
+
+def extended(*args, **kwargs):
+
+
+_________________________________
+>>> 
+>>> def hypervolume(*args):
+... 	print(args)
+...	print(type(args))
+...
+>>> hypervolume(3, 4)
+(3, 4)
+<class 'tuple'>
+>>> hypervolume(3, 4, 5)
+(3, 4, 5)
+<class 'tuple'>
+
+
+_______________________________
+
+>>> def hypervolume(*lengths):
+...	i = iter(lengths)
+...	v = next(i)
+... 	for length in i:
+...		v *= length
+...	return v
+...
+>>> hypervolume(2, 4)
+8
+>>> hypervolume(2, 4, 6)
+48
+>>> hypervolume(2, 4, 6, 8)
+384
+>>> hypervolume(1)
+1
+>>> hypervolume()
+StuopIteration
+
+_______________________________
+
+>>> def hypervolume(length, *lengths):
+...	v = lengths
+... 	for item in lengths:
+...		v *= item
+...	return v
+...
+>>> hypervolume()
+TypeError...
+_______________________________
+
+>>> def tag(name, **kwargs):
+... 	print(name)
+...	print(kwargs)
+... 	print(type(kwargs))
+...
+>>> tag('img', src="monet.jpg",alt="Sunrise by Claude Monet", border=1)
+img
+{'border':1, 'alt': 'Sunrise by Claude Monet', 'src': 'monet.jpg'}
+<class 'dict'>
+>>> 
+
+__________________________________
+>>> 
+>>> def tag(name, **attributes):
+...	result = '<' + name
+...	for key, value in attributes.items():
+...		result += ' {k}="{v}'.format(k=key, v=str(value))
+...	result += '>'
+...	return result
+>>> tag('img', src="monet.jpg",alt="Sunrise by Claude Monet", border=1)
+'<img border="1" alt="Sunrise by Claude Monet" src="monet.jpg">'
+__________________________________
+>>> 
+>>> def print_args(arg1, arg2, *args):
+... 	print(arg1)
+...	print(arg2)
+...	print(args)
+...
+>>> print(1,2,3,4,5)
+1
+2
+(3,4,5)
+>>> def print_args(arg1, arg2, *args, kwarg1, kwarg2):
+... 	print(arg1)
+...	print(arg2)
+...	print(args)
+...	print(kwarg1)
+...	print(kwarg2)
+...
+>>> print_args(1,2,3,4,5, kwarg1=6, kwarg2=7)
+1
+2
+(3,4,5)
+6
+7
+>>> print_args(1,2,3,4,5,6,7)
+TyperError
+>>> def print_args(arg1, arg2, *args, kwarg1, kwarg2, **kwargs):
+... 	print(arg1)
+...	print(arg2)
+...	print(args)
+...	print(kwarg1)
+...	print(kwarg2)
+...	print(kwargs
+...
+>>> print(1,2,3,4,5, kwarg1=6, kwarg2=7, kwarg3=8, kwarg4=9)
+1
+2
+(3, 4, 5)
+6
+7
+{'kwarg3': 8, 'kwarg4': 9}
+>>> 
+>>> def print_args(arg1, arg2, *args, kwarg1, kwarg2, **kwargs, kwargs99):
+SyntaxError
+
+_________________________________________________
+
+>>> def color(red, green, blue, **kwargs):
+...	print('r=', red)
+...	print('g=', green)
+...	print('b=', blue)
+...	print(kwargs)
+...
+>>> k = {'red':21, 'green':68, 'blue':120, 'alpha':52}
+>>> color(**k)
+r = 21
+g = 68
+b = 120
+{'alpha': 52}
+
+__________________________________________________
+Forwarding arguments:
+
+>>> def trace(f, *args, **kwargs):
+... 	print('args =', args)
+...	print('kwargs =',kwargs)
+...	result = f(*args, **kwargs)
+...	print('result =', result)
+...	return result
+...
+>>> int('ff', base=16)
+255
+>>> trace(int, 'ff', base=16)
+args = ('ff',)
+kwargs = {'base': 16}
+result = 255
+255

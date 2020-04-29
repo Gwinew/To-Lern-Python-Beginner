@@ -1,0 +1,35 @@
+__call__():
+special method
+
+Test in python REPL:
+
+$ cd resolver/
+$ python3
+
+>>> from resolver import Resolver
+>>> resolve = Resolver()
+>>> resolve('sixty-north.com')
+'93.93.131.30'
+>>> resolve.__call__('sixty-north.com')
+'93.93.131.30'
+>>> resolve._cache
+{'sixty-north.com': '93.93.131.30'}
+>>> resolve('pluralsight.com')
+'206.71.66.43'
+>>> resolve._cache
+{'sixty-north.com': '93.93.131.30', 'pluralsight.com': '206.71.66.43'}
+________________________________________________________________________
+
+Checked funtion times during works programs:
+
+>>> from timeit import timeit
+>>> timeit(setup="from __main__ import resolve", stmt="resolve('python.org')", number=1)
+0.000688...
+>>> timeit(setup="from __main__ import resolve", stmt="resolve('python.org')", number=1)
+8.065...e-06
+>>> print("{:f}".format(_))
+0.000008			# This is shorter time , because, we put something into _chache and we dont't clear that early
+
+_________________________________________________________________________
+
+in code, we add def clear(self): self._cache.clear()

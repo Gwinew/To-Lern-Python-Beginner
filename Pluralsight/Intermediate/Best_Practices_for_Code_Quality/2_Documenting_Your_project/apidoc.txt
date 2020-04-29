@@ -1,0 +1,6 @@
+apidoc:
+
+sphinx-apidoc -o docs <folder_name>/
+
+
+make clean html

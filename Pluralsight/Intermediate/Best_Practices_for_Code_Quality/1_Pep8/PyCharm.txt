@@ -1,0 +1,7 @@
+When we highlight a waring line, then it show how exactly it is looks like, and how to fix this.
+
+PyCharm showing all warnings on the right side as litle horizontal line.
+
+If we have a problem with placement command line (e.g. three spaces not four) then we go to:
+
+Code/Reformat Code

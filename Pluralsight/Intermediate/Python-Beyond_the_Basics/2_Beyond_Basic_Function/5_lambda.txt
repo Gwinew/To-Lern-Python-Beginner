@@ -1,0 +1,38 @@
+Lambda:
+
+>>> help(sorted)
+sorted(...)
+	sorted(iterable, key=None, reverse=False) --> new sorted list
+
+
+>>> last_name = lambda name: name.split()[-1]
+>>> last_name
+<function <lambda> at 0x100...>
+>>> last_name("Nikola Tesla")
+'Tesla'
+
+This the same:
+>>> def first_name(name):
+...	return name.split()[0]
+
+
+def:
+- statement which defines a function and binds it to a name
+- Must have a name
+- Arguments delimited by parentheeses, spearated by commas
+- Zero or more arguments supported - zero arguments -> empty parenthees
+- Body is an indented block of statements
+- A return statement is required to return anything other than None
+- Regular functions can have docstrings
+- Easy to acces dor testing
+
+
+lambda:
+- expression which evaluates to a functiom
+- Anonymous
+- Argument lists terminated by colon, spearated by commas
+- Zero or more arguments supported - zero arguments -> lambda
+- Body is a single expression
+- The return value is given by the body expression. No return statement is permitted
+- Lambdas cannot have docstrings
+- Akward or impossible to test

@@ -1,0 +1,9 @@
+Mypy:
+- Command line type checker
+
+Iside virtual enviroment:
+
+pip install mypy
+
+
+mypy <name_package>/

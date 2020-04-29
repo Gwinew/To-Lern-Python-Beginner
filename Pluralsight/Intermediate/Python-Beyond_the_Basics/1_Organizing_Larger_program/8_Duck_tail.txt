@@ -1,0 +1,24 @@
+Duck Tails:
+
+- Modules as Sinletons
+	- Modules are only executed once, when first imported
+	- Module initialisation order is well defined
+
+registry.py
+
+_registry = []
+
+def registry(name):
+	_registry.append(name)
+
+def registered_names():
+	return iter(_registry)
+
+
+use_registry.py
+
+import registry
+
+registry.register('my name')
+for name in registry.registered_names():
+	print(name)

@@ -1,0 +1,18 @@
+$ python3 -m reader.compressed.bzipped test.bz2 data compressed with bz2
+$ python3 -m reader.compressed.gzipped test.gz data compressed with gzip
+$ ls
+reader		test.bz2		test.gz
+$ python3
+
+>>> import reader
+>>> r = reader.Reader('test.bz2')
+>>> r.read()
+'data compressed with bz2'
+>>> r.close()
+>>> r = reader.Reader('test.gz')
+>>> r.read()
+'data compressed with gzip'
+>>> r.close()
+>>> r = reader.Reader('reader/__init__.py')
+'from reader.reader import Reader'
+>>> r.close()

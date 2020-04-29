@@ -1,0 +1,10 @@
+$ python3
+
+>>> import socket
+>>> def resolve(host):
+...	return socket.gethostbyname(host)
+...
+>>> resolve
+<function resolve at 0x1007be950>
+>>> resolve('sixty-north.com')
+'93.93.131.30'

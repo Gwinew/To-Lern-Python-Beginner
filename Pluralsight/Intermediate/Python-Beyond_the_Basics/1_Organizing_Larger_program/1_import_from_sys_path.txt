@@ -1,0 +1,34 @@
+sys.path:
+
+>>> import sys
+>>> sys.path		# Big list packages
+
+...
+
+>>> sys.path[0]
+''
+>>> sys.path[-5:]	# 5 last packages
+
+$ mkdir not_searched
+$ python3
+
+>>> import path_test	# Not found
+
+>>> import sys
+>>> sys.path.append('not_searched')
+>>> import path_test
+>>> path_test.found()
+Python found me!
+
+
+===============================================
+PYTHONPATH:
+
+$ export PYTHONPATH=not_searched
+# python3
+
+>>> import sys
+>>> [p for p in sys.path if 'not_searched' in p]
+>>> import path_test
+>>> path_test.found()
+Python found me!

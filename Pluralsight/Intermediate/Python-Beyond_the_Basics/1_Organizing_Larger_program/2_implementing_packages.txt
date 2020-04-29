@@ -1,0 +1,51 @@
+$ touch reader/__init__.py
+$ python3
+
+>>> import reader
+>>> type(reader)
+<class 'module'>
+>>> reader.__file__
+'./reader/__init__.py'
+
+
+
+________________
+$ python3
+>>>import reader
+reader is being imported!
+
+________________
+
+$ python3
+>>> import reader.reader
+>>> reader.reader.__file__
+'./reader/reader.py'
+>>> r = reader.reader.Reader('reader/reader.py')
+>>> r.read()
+bla bla bla
+>>> r.close()
+
+_______________
+After make in from reader.reader import Reader in __init__ then:
+
+>>> import reader
+>>> r = reader.Reader('reader/__init__.py')
+>>> r.read()
+'from reader.reader import Reader'
+>>> r.close()
+
+_______________
+
+Subpackage:
+
+$ mkdir reader/compressed
+$ touch reader/compressed/__init__.py
+$ python3
+
+>>> import reader.compressed
+_______________
+reset:
+>>> import reader
+>>> impoer reader.compressed
+>>> import reader.compressed.gzipped
+>>> import reader.compressed.bzipped

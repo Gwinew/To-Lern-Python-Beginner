@@ -1,0 +1,45 @@
+Executable directories:
+
+- directories containing an entry point for Python execution
+
+$ python3 path1
+/opt/local/bin/python3: can't find '__main__' modle in 'path1'
+________________________________________________________________
+if we have __main__.py then we get a messege or function from this file:
+e.g
+
+$ python3 reader
+executing __main__.py with name __main__
+_______________________________________________________________________
+About change the script __main__.py
+
+$ python3 reader test.gz
+data compressed with gzip
+$ python3 reader test.bz2
+data compressed with bz2
+$ python3 reader reader/__main__.py
+import sys
+
+import reader
+
+r = reader.Reader(sys.argv[1])
+try:
+	print(r.read())
+finally:
+	r.close()
+
+________________________________________________________________________
+
+executable zip file:
+zip file containing and entry point for Python execution.
+
+$ cd reader
+$ zip -r ../reader.zip *
+bla bla bla
+
+bla 
+$ cd ..
+$ python3 reader.zip test.gz
+data compressed with gzip
+$ python3 reader test.bz2
+data compressed with bz2

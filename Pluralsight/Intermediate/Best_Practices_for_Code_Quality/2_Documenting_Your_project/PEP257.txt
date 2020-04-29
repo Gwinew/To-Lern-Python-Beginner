@@ -1,0 +1,66 @@
+PEP 257:
+
+- Semantics and conventions for docstrings
+
+- Docstrins:
+	- Strings as first statement of a module, function, class or method
+	- Becomes the __doc__ attribute
+
+Sphinx:
+
+	- Python documentation generator
+	- De-facto standard
+	- reStructuredText -> HTML, PDF, etc.
+	- Extract docstrings from code
+
+Inside a virtual enviroment:
+
+pip install sphinx
+
+Sphinx quickstart:
+
+sphinx-quickstart
+
+When we want to extract information to html:
+
+make html
+
+.......:
+
+xcode-select --install
+
+Every configuration is store in conf.py
+_______________________________________________________
+reStructuredText
+
+
+file.rst
+
+<blankline>
+====
+name
+====
+<blankline>
+
+<blankline>
+Subject
+<blankline>
+-------
+<blankline>
+
+<blankline>
+A Subsection
+~~~~~~~~~~~~
+<blankline>
+
+
+<blankline>
+Example::
+<blankline>
+syntex
+<blankline>
+<blankline>
+
+
+link to URL:
+`Pluralsight <http://www.pluralsight>`_

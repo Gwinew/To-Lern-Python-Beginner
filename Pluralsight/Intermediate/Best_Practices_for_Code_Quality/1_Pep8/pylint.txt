@@ -1,0 +1,18 @@
+Inside virtual enviroment install pylint:
+
+python install pylint
+
+When we want to check a codefile:
+
+pylint <name_folder>/<name_file.py> 	# If we want check a entire folders then don't write "/<name_file.py>"
+
+
+Output text of code wich is waring:
+pylint --generate-rcfile
+
+We can save this text:
+
+pylint --generate-rcfile >pylintrc
+
+in this pylintrc we can change a values in good names, like: tata
+and we don't get warrings information about this value anymore

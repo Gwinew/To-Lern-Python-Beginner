@@ -1,0 +1,25 @@
+Callable classes:
+
+- Calling a class invokes the constructor
+- Remember that, everything in Python is an object and that includes classes
+
+
+resolve = Resolver()
+Resolver - a class
+() - calling
+
+def sequence_class(immutable):
+	if immutable:
+		cls = tuple
+	else:
+		cls = list
+	return cls
+
+
+seq = sequence_class(immutable=True)
+
+t = seq("Tim")
+t
+('T', 'i', 'm')
+type(t)
+<class 'tuple'>

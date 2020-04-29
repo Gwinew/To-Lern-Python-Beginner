@@ -1,0 +1,21 @@
+Conditional statement:
+
+if condition:
+	result = true_value
+else:
+	result = false_value
+
+
+Conditional expression:
+
+result = true_value if condition else false_value
+
+e.g.
+
+>>> def sequence_class(immutable):
+... 	return tuple if immutable else list
+
+>>> seq = sequence_class(immutable=False)
+>>> s = seq('Nai')
+>>> s
+['N', 'a', 'i']
