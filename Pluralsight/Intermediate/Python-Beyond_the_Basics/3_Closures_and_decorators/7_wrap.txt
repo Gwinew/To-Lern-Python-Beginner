@@ -1,0 +1,55 @@
+Wrap:
+Naive decorators can lose importan metadata.
+
+
+def noop(f):
+	def noop_wrapper():
+		return f()
+	return noop_wrapper
+
+@noop
+def hello():
+	"Print a well-known message."
+	print('Hello, world!')
+
+noop is replace information in hello definition.
+__________________________________________
+def noop(f):
+	def noop_wrapper():
+		return f()
+
+	noop_wrapper.__name__ = f.__name__
+	noop_wrapper.__doc__ = f.__doc__
+	return noop_wrapper
+
+@noop
+def hello():
+	"Print a well-known message."
+	print('Hello, world!')
+
+___________________________________________________
+functools.wraps()
+- properly update metadata on wrapped functions
+
+import functools
+
+
+def noop(f):
+	@functools.wraps(f)
+	def noop_wrapper():
+		return f()
+	return noop_wrapper
+
+@noop
+def hello():
+	"Print a well-known message."
+	print('Hello, world!')
+
+_______________________________________________________
+
+Decorators:
+
+- Decorators are a powerful tool
+- Decorators are widely used in Python
+- It's possible to overuse decorators; be mindful
+- They can improve maintainability, increase clarity, and reduce complexity

@@ -1,0 +1,23 @@
+Returning functions
+___________________
+
+
+
+def outer():
+	def inner():
+		print('inner')
+	inner()
+
+
+_________________________
+Returning functions:
+def outer():
+	def inner():
+		print('inner')
+	return inner
+
+i = outer()
+i()
+
+First-class Functions:
+functions can be treated like any other object

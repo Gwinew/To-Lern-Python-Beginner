@@ -1,0 +1,91 @@
+LEGB does not aplly when making new bindings.
+
+
+message = 'global'
+
+def enclosing():
+	message = 'enclosing'
+
+	def local():
+		message = 'local'
+	print('enclosing message:', message)
+	local()
+	print('enclosing message:', message)
+print('global message:', message)
+enclosing()
+print('global message:', message)
+
+
+=====================================
+global message: global
+enclosing message: enclosing
+enclosing message: enclosing
+global message: global
+________________________________________
+global:
+introduce names from global namespace into the local namespace
+________________________________________________
+message = 'global'
+
+def enclosing():
+	message = 'enclosing'
+
+	def local():
+		global message
+		message = 'local'
+	print('enclosing message:', message)
+	local()
+	print('enclosing message:', message)
+print('global message:', message)
+enclosing()
+print('global message:', message)
+
+=====================================
+global message: global
+enclosing message: enclosing
+enclosing message: enclosing
+global message: local
+_______________________________________
+
+nonlocal:
+intriduce names from the enclosing namespace into the local namespace
+_______________________________________________________________________
+message = 'global'
+
+def enclosing():
+	message = 'enclosing'
+
+	def local():
+		nonlocal message
+		message = 'local'
+	print('enclosing message:', message)
+	local()
+	print('enclosing message:', message)
+print('global message:', message)
+enclosing()
+print('global message:', message)
+
+=====================================
+global message: global
+enclosing message: enclosing
+enclosing message: local
+global message: global
+_______________________________________
+
+
+e.g.
+
+import time
+def make_timer():
+	last_called = None
+
+	def elapsed():
+		nonlocal last_called
+		now = time.time()
+		if last_called is None:
+			last_called = now
+			return None
+		result = now - last_called
+		last_called = now
+		return result
+	return elapsed

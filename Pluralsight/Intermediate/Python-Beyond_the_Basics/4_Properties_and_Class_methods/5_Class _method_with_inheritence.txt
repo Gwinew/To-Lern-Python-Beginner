@@ -1,0 +1,10 @@
+>>> r3 = RefrigeratedShippingContainer.create_with_items("ESC", ["brocolli","cauliflower", "carrots"], celcius=2.0)
+>>> r3
+<shippong.RefrigeratedShippingContainer at 0xa10...>
+>>> r3.contents
+['brocolli', 'cauliflower', 'carrots']
+>>> r3.celcius
+2.0
+>>> r3.bic
+ESCR0013370
+>>> r3.celcius=12.0

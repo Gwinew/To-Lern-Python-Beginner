@@ -1,0 +1,37 @@
+def:
+- define new functions, executed at runtime
+
+def func():
+	def local_func():
+		a = 'hello'
+		b = 'world'
+		return a + b
+	x = 1
+	y = 2
+	return x + y
+____________________________________
+
+store = []
+
+def sort_by_last_letter(strings):
+	def last_letter(s):
+		return s[-1]
+	store.append(last_letter)
+	print(last_letter)
+	return sorted(strings, key=last_letter)
+
+
+LEGB:
+Local
+Enclosing
+Global
+Built-in
+
+
+Local functions:
+
+- Useful for specialized, one-off functions
+- Aid in code organization and readability
+- Similar to lambdas, but more general
+ - May coontain multiple expressions
+ - May contain statements

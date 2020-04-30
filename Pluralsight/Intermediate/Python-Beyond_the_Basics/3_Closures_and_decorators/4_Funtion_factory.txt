@@ -1,0 +1,27 @@
+Function factory:
+- function that returns new, specialized functions
+
+pow(x,y) - return the value of x to power of 3 (same as 4*4*4) 
+
+function:
+def raise_to(exp):
+	def raise_to_exp(x):
+		return pow(x, exp)
+	return raise_to_exp
+
+______________________________
+>>> from xyz import raise_to
+>>> square = raise_to(2)
+>>> square.__closure__
+(<cell at 0x10...: int object at 0x10...>,)
+>>> square(5)
+25
+>>> square(9)
+81
+>>> cube = raise_to(3)
+>>> cube(3)
+27
+>>> cube(10)
+1000
+
+

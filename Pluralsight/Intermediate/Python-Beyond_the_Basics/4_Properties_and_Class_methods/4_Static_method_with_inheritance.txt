@@ -1,0 +1,21 @@
+Static Method with Inheritance:
+
+>>> r1 = RefrigeratedShippingContainer ("MAE", "fish")
+>>> r1.bic
+MAEU0013371
+>>> ShippingContainer._make_bic_code("MAE", 1234)
+MAEU0012349
+>>> RefrigeratedShippingContainer._make_bic.code("MAE", 1234)
+MAER0012347
+>>> c = shippingContainer("ESC", "textilies")
+>>> c._make_bic_code("MAE", 1234)
+MAEU0012349
+>>> r= RefrigeretShippingContainer("ESC", 'peas')
+>>> r._make_bic_code("MAE", 1234)
+MAER0012347
+
+if we change self.bic = ShippingContanair._make_bic_code(... to self.bic = self._make_bic_code(...
+Then:
+>>> r2 = RefrigeratedShippingContainer ("MAE", "fish")
+>>> r2.bic
+MAER0013370

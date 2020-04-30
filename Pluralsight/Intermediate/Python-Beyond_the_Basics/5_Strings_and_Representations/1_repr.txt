@@ -1,0 +1,56 @@
+repr()
+
+- Exactness is more important than human-friendliness
+- Suited for debugging
+- Includes identifying information
+- Generally best for logging
+
+The result of repr() should generally contain more information than the result of str()
+
+repr() is for developers
+str() is for clients
+
+class point2D:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	
+	def __str__(self):
+		return '({}, {})'.format(self.x, self.y)
+
+	def __repr__(self):
+		return 'Point2D(x={}, y={}'.format(self.x, self.y)
+
+
+>>> p = Point2D(3,4)
+>>> repr(p)
+'Point2D(x=3, y=4)'
+______________________
+
+>>> from point import Point2D
+>>> import pdb
+>>> p = Point2D(3, 5)
+>>> pdb.set_trace()
+(Pdb) print p 			PDB print command used repr()
+Point2D(x=3, y=5)
+(Pdb) 
+
+As a rule you should always write a repr() for your classes
+
+The default repr() is not very helpful:
+
+class point2D:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	
+	def __str__(self):
+		return '({}, {})'.format(self.x, self.y)
+
+#	def __repr__(self):
+#		return 'Point2D(x={}, y={}'.format(self.x, self.y)
+
+>>> from point import Point2D
+>>> p = Point2D(3,4)
+>>> repr(p)
+'<point.Point2D object at 0x10xxx>'

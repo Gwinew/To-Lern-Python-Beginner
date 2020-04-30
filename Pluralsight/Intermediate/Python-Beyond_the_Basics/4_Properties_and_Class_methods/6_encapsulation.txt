@@ -1,0 +1,38 @@
+encapsulation using the @property decorator
+
+>>> r4 = RefrigeratedShippingContainer.create_with_items("YML", ["fish"], celcius=-18)
+>>> r4.celcius
+-18
+>>> r4.celciusz = -5.0
+AttributeError
+
+Decorator recap
+
+@decorator
+def f():
+	do_something()
+
+__________________
+The @property decorator
+
+
+class Example:
+	
+	@property
+	def p(self):
+		return self._p
+	
+	@p.setter
+	def p(self, value)
+		self._p = value
+
+e.g.
+
+
+>>> r5 = RefrigeratedShippingContainer.create_with_items("YML", ["prawns"], celcius=-18)
+>>> r5.celcius
+-18
+>>> r5.celcius = -19.0
+-19
+>>> r5.celcius = 5
+ValueError: Temperature too hot!
