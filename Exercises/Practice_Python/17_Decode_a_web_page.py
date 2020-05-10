@@ -28,3 +28,18 @@ for i in range(len(head_line)):
 
 print('Head Line List:\n')
 pp(head_line_list)
+
+
+# from https://gist.github.com/M8T3/7ac7ab09236cfa4ec183305396a29864
+title1 = soup.find_all('span')   #the tag for the headline, can't use class_="balancedHeadline" to search
+'''
+title2 = soup.find_all('h2')    #not included
+'''
+all_title = title1 #+ title2
+articles = []
+for item in all_title:
+        articles.append(item.get_text())
+
+articles = list(filter(None, articles))
+for item in articles:
+    print(item)
