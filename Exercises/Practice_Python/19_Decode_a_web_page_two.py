@@ -13,3 +13,42 @@ libraries through the solution of the exercise posted.
 This will just print the full text of the article to the screen. It will not
 make it easy to read, so next exercise we will learn how to wrote this text to a .txt file.
 """
+
+import requests
+
+from bs4 import BeautifulSoup
+
+
+def get_text_from_url(url):
+    r = requests.get(url)
+    r_html = r.text
+    soup = BeautifulSoup(r_html, "html.parser")
+    texting = soup.find_all('div', class_='grid--item body body__container article__body grid-layout__content')
+    full_text = []
+    for i in texting:
+        full_text.append(i.get_text())
+    full_text = ' '.join(full_text)
+    return full_text
+
+url = 'https://www.vanityfair.com/style/society/2014/06/monica-lewinsky-humiliation-culture'
+full_text = get_text_from_url(url)
+print(full_text)
+'''
+r = requests.get('https://www.vanityfair.com/style/society/2014/06/monica-lewinsky-humiliation-culture')
+print(r.status_code)
+print(r.encoding)
+# print(r.text) print a full text with code html etc.
+r_html = r.text
+
+soup = BeautifulSoup(r_html, "html.parser")
+texting = soup.find_all('div', class_='grid--item body body__container article__body grid-layout__content')
+full_text = []
+for i in texting:
+    full_text.append(i.get_text())
+full_text = ' '.join(full_text)
+
+print(len(full_text))
+'''
+
+with open('texting.txt', 'w') as textfile:
+    textfile.write(full_text)
