@@ -20,5 +20,19 @@ boards that look like this.
 
  Remember that in Python 3, printing to the screen is accomplished by
 
- print('Thoing to show on screen')
+ print('Thing to show on screen')
 '''
+
+def border_up_down_line(num_x):
+    return ' --- '+'--- '*(num_x-1)
+
+def border_side_line(num_x):
+    return '|   |'+'   |'*(num_x-1)
+
+num_x = int(input('Please give the number of x-axis:\n'))
+num_y = int(input('Please give the number of y-axis:\n'))
+
+print(border_up_down_line(num_x))
+for i in range(num_y):
+    print(border_side_line(num_x))
+    print(border_up_down_line(num_x))
