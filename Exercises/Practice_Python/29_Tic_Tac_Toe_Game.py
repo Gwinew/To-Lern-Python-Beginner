@@ -20,7 +20,11 @@ As a bonus, you can ask the player if they want to play again and keep
 a running tally of who won more - Player 1 or Player 2.
 """
 def board_game(nmt):
-    return f' --- --- --- \n| {nmt[0][0]} | {nmt[0][1]} | {nmt[0][2]} |\n --- --- --- \n| {nmt[1][0]} | {nmt[1][1]} | {nmt[1][2]} |\n --- --- --- \n| {nmt[2][0]} | {nmt[2][1]} | {nmt[2][2]} |\n --- --- --- '
+    return f' c  1   2   3  \n\
+r  --- --- --- \n1 | {nmt[0][0]} | {nmt[0][1]} | {nmt[0][2]} |\n\
+   --- --- --- \n2 | {nmt[1][0]} | {nmt[1][1]} | {nmt[1][2]} |\n\
+   --- --- --- \n3 | {nmt[2][0]} | {nmt[2][1]} | {nmt[2][2]} |\n\
+   --- --- --- '
 
 def check_grid(nmt):
     #row
@@ -76,7 +80,7 @@ def input_player_value(countx, counto, nmt, sen_x, sen_o, sen_again):
         nmt[n1][n2] = "O"
         return nmt, countx, counto
 
-def game_input(nmt):
+def game_input(nmt, p_one, p_two):
     countx = 0
     counto = 0
     sen_x = "Player One is turn"
@@ -88,17 +92,29 @@ def game_input(nmt):
         nmt = a[0]
         if check_grid(nmt) == 'X':
             print(board_game(nmt))
-            return 'Player One is Won!'
+            p_one += 1
+            return 'Player One is Won!', p_one, p_two
         if check_grid(nmt) == 'O':
             print(board_game(nmt))
-            return 'Player Two is Won!'
+            p_two += 1
+            return 'Player Two is Won!', p_one, p_two
         countx = a[1]
         counto = a[2]
-    return "End"
+    print(board_game(nmt))
+    return "End - Draw!", p_one, p_two
 
-nmt = [[0, 0, 0],
-	   [0, 0, 0],
-	   [0, 0, 0]]
 
-game = game_input(nmt)
-print(game)
+p_one = 0
+p_two = 0
+new_game = 'Y'
+while new_game == 'Y':
+    nmt = [[0, 0, 0],
+    	   [0, 0, 0],
+    	   [0, 0, 0]]
+    game = game_input(nmt, p_one, p_two)
+    print(game[0])
+    p_one = game[1]
+    p_two = game[2]
+    print(f'Score:\nPlayer One: {p_one}\nPlayer Two: {p_two}')
+    new_game = input('Do you want play again?\n(write "Y" for Yes or "N" for No): ')
+print('Exit')
