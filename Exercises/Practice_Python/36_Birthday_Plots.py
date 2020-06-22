@@ -1,21 +1,24 @@
 """
-In the previous exercise we saved information
-about famous scientists’ names and birthdays to disk.
-In this exercise, load that JSON file from disk,
-extract the months of all the birthdays,
-and count how many scientists have a birthday in each month.
+In the previous exercise we counted how many birthdays
+there are in each month in our dictionary of birthdays.
 
-Your program should output something like:
+In this exercise, use the bokeh Python library to plot
+a histogram of which months the scientists have birthdays in!
+Because it would take a long time for you to input the months of various scientists,
+you can use my scientist birthday JSON file.
+Just parse out the months (if you don’t know how,
+I suggest looking at the previous exercise or its solution) and draw your histogram.
 
-{
-	"May": 3,
-	"November": 2,
-	"December": 1
-}
+If you are using a purely web-based interface for coding,
+this exercise won’t work for you, since it requires installing the bokeh Python package.
+Now might be a good time to install Python on your own computer.
 """
+
 from collections import Counter
 
 import json
+
+from bokeh.plotting import figure, show, output_file
 
 
 def number_of_month(name_dict):
@@ -64,4 +67,13 @@ first_select = number_of_month(name_dict)
 second_select = name_of_month(first_select[0], first_select[1])
 count_dict = Counter(second_select)
 
-print(count_dict)
+output_file('plot_birth.html')
+x_categories = ['January', 'February', 'March', 'April',
+'May', 'June', 'July', 'August', 'September', 'October',
+'November', 'December']
+x = list(count_dict.keys())
+y = list(count_dict.values())
+p = figure(x_range=x_categories)
+p.vbar(x=x, top=y, width=0.5, color='firebrick')
+p.xaxis.major_label_orientation = 1
+show(p)

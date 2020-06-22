@@ -49,9 +49,13 @@ if first == "1":
         else:
             print('Incorrected name!')
 elif first == "2":
-    new_name = input("Write a name: ")
-    new_day_of_birth = input("Write a birthday like MM/DD/YYYY: ")
-    dict_birthday[new_name] = new_day_of_birth
+    print(l_of_n(list_of_names))
+    c = 'Y'
+    while c == 'Y':
+        new_name = input("Write a name: ")
+        new_day_of_birth = input("Write a birthday like MM/DD/YYYY: ")
+        dict_birthday[new_name] = new_day_of_birth
+        c = input("Do You want input another person? - Write 'Y' for Yes: ")
     with open('info.json', 'w') as f:
         json.dump(dict_birthday, f)
 else:
