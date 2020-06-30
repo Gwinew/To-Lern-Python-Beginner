@@ -11,7 +11,7 @@ age=input(f'Hi {name}!\nPlease, write your age:\n')
 
 print(f'You left {100-int(age)} years to will turn 100 years old!')
 
-number = input('Please, give a number 1-20:\n')
+number = input('Please, give a number 1-20: \n')
 
 x = range(int(number))
 
