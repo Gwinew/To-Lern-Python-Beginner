@@ -1,0 +1,53 @@
+case 5
+
+import pandas as pd
+import numpy as np
+birddata = pd.read_csv("https://courses.edx.org/asset-v1:HarvardX+PH526x+2T2019+type@asset+block@bird_tracking.csv", index_col=0)
+birddata.head()
+
+
+
+# First, use `groupby()` to group the data by "bird_name".
+grouped_birds =
+
+# Now calculate the mean of `speed_2d` using the `mean()` function.
+mean_speeds = 
+
+# Find the mean `altitude` for each bird.
+mean_altitudes = 
+
+
+
+# Convert birddata.date_time to the `pd.datetime` format.
+birddata.date_time = 
+
+# Create a new column of day of observation
+birddata["date"] = 
+
+# Use `groupby()` to group the data by date.
+grouped_bydates = 
+
+# Find the mean `altitude` for each date.
+mean_altitudes_perday =
+
+
+# Use `groupby()` to group the data by bird and date.
+grouped_birdday = 
+
+# Find the mean `altitude` for each bird and date.
+mean_altitudes_perday =
+
+
+
+
+import matplotlib.pyplot as plt
+
+eric_daily_speed  = # Enter your code here.
+sanne_daily_speed = # Enter your code here.
+nico_daily_speed  = # Enter your code here.
+
+eric_daily_speed.plot(label="Eric")
+sanne_daily_speed.plot(label="Sanne")
+nico_daily_speed.plot(label="Nico")
+plt.legend(loc="upper left")
+plt.show() 
