@@ -18,4 +18,5 @@ This is not a project, but a set of tasks from Python's learning courses, as wel
 ## Used materials
 
 1. Flynerd - [www.flynerd.pl](www.flynerd.pl)"# To-Lern-Python-Beginner" 
-1. Learn Python - [https://www.learnpython.org](https://www.learnpython.org)"# To-Lern-Python-Beginner" 
+2. Learn Python - [https://www.learnpython.org](https://www.learnpython.org)"# To-Lern-Python-Beginner" 
+3. Plurasight - [https://www.pluralsight.com](https://www.pluralsight.com)"# To-Lern-Python-Beginner" 
